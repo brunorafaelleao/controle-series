@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\SeriesController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -12,6 +12,4 @@ Route::get('/', function () {
 */
 
 //rota para exibir a lista de séries
-Route::get('/series', function(){
-
-});
+Route::get('/series', [SeriesController::class, 'listarSeriess']);
