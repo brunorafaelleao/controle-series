@@ -12,4 +12,4 @@ Route::get('/', function () {
 */
 
 //rota para exibir a lista de séries
-Route::get('/series', [SeriesController::class, 'listarSeriess']);
+Route::get('/series', [SeriesController::class, 'index']);

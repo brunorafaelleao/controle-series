@@ -1,9 +1,12 @@
 <?php
+
 namespace App\Http\Controllers;
 
-class SeriesController
+use Illuminate\Http\Request;
+
+class SeriesController extends Controller
 {
-  public function listarSeriess(){
+  public function index(){
     $series = [
       'Punisher',
       'Lost',
@@ -11,13 +14,13 @@ class SeriesController
       'Reacher'
     ];
 
-    $html = '<ul>';
-    foreach($series as $serie){
-      $html .= "<li>$serie</li>";
-    }
-    $html .= '</ul>';
 
-    echo $html;
+    return view('series.index')->with('series', $series);
+
+
+    // return view('listar-series', ['series' => $series]);
+    // return view('listar-series',compact('series'));
+    // compact('series') é o mesmo que ['series' => $series]
 
 
   }
